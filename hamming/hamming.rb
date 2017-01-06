@@ -5,7 +5,6 @@ end
 class Hamming
   def Hamming.compute(str1, str2)
     ans = 0
-    i = 0
 
     if str1.length != str2.length
       raise ArgumentError
