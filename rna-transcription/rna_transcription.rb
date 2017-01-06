@@ -1,20 +1,16 @@
 module BookKeeping
   VERSION = 4
 end
-module Complement
+class Complement
+  NUKES = {"G" => "C", "C" => "G", "T" => "A", "A" => "U"}
+
   def Complement.of_dna(str)
     ans = ""
     max_index = str.length - 1
+
     (0..max_index).each do |i|
-      case str[i]
-      when "G"
-        ans = ans + "C"
-      when "C"
-        ans = ans + "G"
-      when "T"
-        ans = ans + "A"
-      when "A"
-        ans = ans + "U"
+      if NUKES[str[i]]
+        ans += NUKES[str[i]]
       else
         return ""
       end
