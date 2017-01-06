@@ -1,4 +1,7 @@
-# Something
+module BookKeeping
+  VERSION = 3
+end
+
 class Hamming
   def Hamming.compute(str1, str2)
     ans = 0
@@ -8,11 +11,8 @@ class Hamming
       raise ArgumentError
     end
 
-    while i < str1.length do
-      if str1[i] != str2[i]
-        ans = ans + 1
-      end
-      i = i + 1
+    (0..str1.length).each do |i|
+      ans += 1 if str1[i] != str2[i]
     end
 
     return ans
