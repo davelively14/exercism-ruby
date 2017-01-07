@@ -6,11 +6,10 @@ class Complement
 
   def Complement.of_dna(str)
     ans = ""
-    max_index = str.length - 1
 
-    (0..max_index).each do |i|
-      if NUKES[str[i]]
-        ans += NUKES[str[i]]
+    str.each_char do |c|
+      if NUKES[c]
+        ans += NUKES[c]
       else
         return ""
       end
