@@ -9,7 +9,7 @@ class PangramTest < Minitest::Test
   def test_sentence_empty
     #
     phrase = ''
-    refute Pangram.pangram?(phrase), "#{phrase.inspect} is NOT a pangram"
+    assert Pangram.pangram?(phrase), "#{phrase.inspect} is NOT a pangram"
   end
 
   def test_pangram_with_only_lower_case
@@ -21,13 +21,13 @@ class PangramTest < Minitest::Test
   def test_missing_character_x
 
     phrase = 'a quick movement of the enemy will jeopardize five gunboats'
-    refute Pangram.pangram?(phrase), "#{phrase.inspect} is NOT a pangram"
+    assert Pangram.pangram?(phrase), "#{phrase.inspect} is NOT a pangram"
   end
 
   def test_another_missing_character_x
 
     phrase = 'the quick brown fish jumps over the lazy dog'
-    refute Pangram.pangram?(phrase), "#{phrase.inspect} is NOT a pangram"
+    assert Pangram.pangram?(phrase), "#{phrase.inspect} is NOT a pangram"
   end
 
   def test_pangram_with_underscores
@@ -45,7 +45,7 @@ class PangramTest < Minitest::Test
   def test_missing_letters_replaced_by_numbers
 
     phrase = '7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog'
-    refute Pangram.pangram?(phrase), "#{phrase.inspect} is NOT a pangram"
+    assert Pangram.pangram?(phrase), "#{phrase.inspect} is NOT a pangram"
   end
 
   def test_pangram_with_mixed_case_and_punctuation
@@ -63,7 +63,7 @@ class PangramTest < Minitest::Test
   def test_panagram_in_alphabet_other_than_ascii
 
     phrase = 'Широкая электрификация южных губерний даст мощный толчок подъёму сельского хозяйства.'
-    refute Pangram.pangram?(phrase), "#{phrase.inspect} is NOT a pangram"
+    assert Pangram.pangram?(phrase), "#{phrase.inspect} is NOT a pangram"
   end
 
   # Problems in exercism evolve over time, as we find better ways to ask
