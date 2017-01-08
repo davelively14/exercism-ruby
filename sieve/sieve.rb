@@ -1,18 +1,24 @@
-module ModuleName
+module BookKeeping
   VERSION = 1
 end
 class Sieve
-  def Sieve.new(num)
-    return [] if num < 2
-    series = (2..num).inject([]) {|list, x| list + [x]}
-    return check_prime(series)
+  def initialize(num)
+    if num < 2
+      @series = [] if num < 2
+    else
+      @series = (2..num).inject([]) {|list, x| list + [x]}
+    end
   end
 
-  def Sieve.check_prime(list)
-    return list
+  def primes
+    if @series.length > 0
+      return (2..@series.last).inject(@series) {|acc, x| remove_multiples(acc, x)}
+    else
+      @series
+    end
   end
 
-  def remove_multiples()
-
+  def remove_multiples(list, number)
+    list.find_all {|x| x % number != 0 || x <= number}
   end
 end
