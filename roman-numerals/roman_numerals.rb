@@ -2,10 +2,10 @@ module BookKeeping
   VERSION=2
 end
 class RomanNumerals
-  def to_roman(number)
+  def RomanNumerals.to_roman(number)
     result = ""
     while number > 0
-      case number
+      case
       when number >= 1000
         number -= 1000
         result += "M"
