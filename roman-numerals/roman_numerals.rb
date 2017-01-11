@@ -47,5 +47,6 @@ class RomanNumerals
         result += "I"
       end
     end
+    return result
   end
 end

@@ -8,7 +8,7 @@ require_relative 'roman_numerals'
 
 class RomanNumeralsTest < Minitest::Test
   def test_1
-    assert_equal 'I', RomanNumerals.to_roman(1)
+    assert_equal 'I', 1.to_roman
   end
 
   def test_2
