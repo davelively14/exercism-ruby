@@ -1,16 +1,17 @@
 module BookKeeping
   VERSION=2
 end
-class RomanNumerals
-  def RomanNumerals.to_roman(number)
+class Fixnum
+  def to_roman
     result = ""
+    number = self
     while number > 0
       case
       when number >= 1000
         number -= 1000
         result += "M"
       when number >= 900
-        number -= - 900
+        number -= 900
         result += "CM"
       when number >= 500
         number -= 500
